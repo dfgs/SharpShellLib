@@ -48,5 +48,15 @@
     <Compile Include="Shell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LogUtils\LogUtils\LogUtils.csproj">
+      <Project>{17aaeb57-4f55-4e14-9e6d-b4bb59d33560}</Project>
+      <Name>LogUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WorkerLib\WorkerLib\WorkerLib.csproj">
+      <Project>{dd332edf-6c16-4dc8-ba62-1d3f67fe54f8}</Project>
+      <Name>WorkerLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

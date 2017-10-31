@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpShellLib", "SharpShell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{8506ED4B-E45E-46FB-B39C-42A01E3FA9DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerLib", "..\WorkerLib\WorkerLib\WorkerLib.csproj", "{DD332EDF-6C16-4DC8-BA62-1D3F67FE54F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogUtils", "..\LogUtils\LogUtils\LogUtils.csproj", "{17AAEB57-4F55-4E14-9E6D-B4BB59D33560}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{8506ED4B-E45E-46FB-B39C-42A01E3FA9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8506ED4B-E45E-46FB-B39C-42A01E3FA9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8506ED4B-E45E-46FB-B39C-42A01E3FA9DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD332EDF-6C16-4DC8-BA62-1D3F67FE54F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD332EDF-6C16-4DC8-BA62-1D3F67FE54F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD332EDF-6C16-4DC8-BA62-1D3F67FE54F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD332EDF-6C16-4DC8-BA62-1D3F67FE54F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17AAEB57-4F55-4E14-9E6D-B4BB59D33560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17AAEB57-4F55-4E14-9E6D-B4BB59D33560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17AAEB57-4F55-4E14-9E6D-B4BB59D33560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17AAEB57-4F55-4E14-9E6D-B4BB59D33560}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
