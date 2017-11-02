@@ -29,7 +29,7 @@ namespace SharpShellLib
 		{
 		}
 
-		protected override void OnInitializeRessources(params object[] Parameters)
+		protected override sealed void OnInitializeRessources(params object[] Parameters)
 		{
 			Type type;
 			CommandAttribute commandAttribute;
@@ -77,6 +77,11 @@ namespace SharpShellLib
 			}
 		}
 
+		protected override sealed void OnDisposeRessources()
+		{
+			base.OnDisposeRessources();
+
+		}
 		private void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
 		{
 			e.Cancel = true;
@@ -127,16 +132,27 @@ namespace SharpShellLib
 			return results;
 		}
 
+		protected virtual void OnStart()
+		{
+		}
+		protected virtual void OnStop()
+		{
+		}
+
 		protected override void ThreadLoop()
 		{
 			string line;
+			string commandPart, parameterPart;
 			Command command;
 			Dictionary<string,object> parameters;
 			object result;
+			bool explicitParamerters;
 
 			Console.Title = Title;
 
 			Console.CancelKeyPress += Console_CancelKeyPress;
+
+			OnStart();
 
 			foreach(string l in GetBannerLines())
 			{
@@ -155,10 +171,12 @@ namespace SharpShellLib
 
 					try
 					{
-						command = GetCommand(Parser.ParseCommand(line));
-						parameters = GetParameters(command, Parser.ParseParameters(line));
+						explicitParamerters = Parser.ParseCommand(line, out commandPart, out parameterPart);
+						command = GetCommand(commandPart);
+						if (explicitParamerters) parameters = GetParameters(command, Parser.ParseExplicitParameters(parameterPart));
+						else parameters = GetParameters(command, Parser.ParseImplicitParameters(parameterPart,command.Parameters));
 
-						result=command.MethodInfo.Invoke(this, parameters.Values.ToArray() );
+						result =command.MethodInfo.Invoke(this, parameters.Values.ToArray() );
 						if (result == null) continue;
 						if (result is string)
 						{
@@ -187,6 +205,7 @@ namespace SharpShellLib
 				}
 			}
 
+			OnStop();
 		}
 
 		

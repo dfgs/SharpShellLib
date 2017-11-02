@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\WorkerLib\WorkerLib\WorkerLib.csproj">
+      <Project>{dd332edf-6c16-4dc8-ba62-1d3f67fe54f8}</Project>
+      <Name>WorkerLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SharpShellLib\SharpShellLib.csproj">
       <Project>{8b62c76d-ac27-4af0-a3dd-3836afcd58cf}</Project>
       <Name>SharpShellLib</Name>
